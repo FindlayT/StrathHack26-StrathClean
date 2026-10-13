@@ -66,7 +66,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             Navigator.pop(context, image.path);
 
           } catch (e) {
-            print(e);
+            debugPrint('$e');
           }
         },
         child: const Icon(Icons.camera_alt),
