@@ -1,7 +1,5 @@
 import 'dart:convert';
-import 'dart:developer';
 
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:strathclean/models/roles.dart';
@@ -15,7 +13,7 @@ class AuditView extends StatefulWidget {
     this.title = 'Audit',
     this.logsClean = false,
     this.logsIssue = false,
-    this.imagePath = null,
+    this.imagePath,
     required this.user,
     required this.cleanService,
   });
@@ -38,7 +36,7 @@ class _AuditViewState extends State<AuditView> {
   String? _priority;
   final _descriptionController = TextEditingController();
   var _saving = false;
-  String? imagePath = null;
+  String? imagePath;
 
   List<String> get _typeOptions => widget.user.role == Role.cleaner
       ? const ['external']
